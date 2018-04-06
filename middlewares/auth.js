@@ -15,7 +15,7 @@ class Auth {
         next();
       })
       .catch(response => {
-        res.status(response.status);
+        res.status(response.status).send({ message: 'You have no authorization' });
       });
   }
 }

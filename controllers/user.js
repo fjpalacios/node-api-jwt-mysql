@@ -32,12 +32,12 @@ class UserController {
       }
       let password = req.body.password;
       bcrypt.compare(password, user[0].password, (err, result) => {
-        if (err) {
-          return res.status(500)
-            .send({ message: 'Invalid username or password' });
+        if (result) {
+          let token = jwt.createToken(user[0]);
+          return res.status(200).send({ token: token });
         }
-        let token = jwt.createToken(user[0]);
-        return res.status(200).send({ token: token });
+        return res.status(500)
+          .send({ message: 'Invalid username or password' });
       });
     });
   }
