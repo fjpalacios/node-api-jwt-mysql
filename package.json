@@ -13,9 +13,9 @@
     "url": "git+https://github.com/fjpalacios/node-api-jwt-mysql.git"
   },
   "keywords": [
-    "vost",
-    "euskadi",
-    "intranet",
+    "mvc",
+    "jwt",
+    "api",
     "node",
     "express",
     "backend"
